@@ -28,6 +28,6 @@ spec:
            - name: SPRING_DATASOURCE_URL
              value: jdbc:mysql://104.155.62.132/fortunes
            - name: eureka.client.serviceUrl.defaultZone
-             value: http://104.155.84.100:8761/eureka/
+             value: http://35.233.125.59:8761/eureka/
            - name: "eureka.instance.preferIpAddress"
              value: "true"
