@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: fortune-teller-ui
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: fortune-teller-ui
+    spec:
+      containers:
+      -  name: fortune-teller-ui
+         image: nlxarosa/fortune-teller-ui:0.0.1-SNAPSHOT
+         ports:
+           - containerPort: 8080
+         env:
+           - name: eureka.client.serviceUrl.defaultZone
+             value: http://104.155.84.100:8761/eureka/
+           - name: "eureka.instance.preferIpAddress"
+             value: "true"
