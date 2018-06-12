@@ -1,13 +1,13 @@
 ---
 applications:
-- name: fortune-ui
+- name: fortune-service
   memory: 1024M
-  host: fortunes-ui
-  path: target/fortune-teller-ui-0.0.1-SNAPSHOT.jar
+  host: fortunes
+  path: target/fortune-teller-fortune-service-0.0.3-SNAPSHOT.jar
   services:
+  - fortunes-db
   - config-server
   - service-registry
-  - circuit-breaker
 env:
   # Replace with API URI of target PCF environment
   CF_TARGET: https://api.sys.pushto.cf
